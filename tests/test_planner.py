@@ -172,3 +172,11 @@ def test_verdicts():
     assert history.verdict(650, {**g, "slope_14d": 3}, None).startswith("High vs")
     assert history.verdict(650, {**g, "slope_14d": -3}, None).startswith("High but falling")
     assert history.verdict(500, None, 4.0).startswith("Rising")
+
+
+def test_probing_needs_fewer_searches_but_finds_the_same_cheapest():
+    quick, full = FakeSearcher(), FakeSearcher()
+    a = planner.plan(MEXICO, quick, log=lambda *_: None)
+    b = planner.plan(MEXICO, full, thorough=True, log=lambda *_: None)
+    assert a[0].total == b[0].total == 705
+    assert len(quick.seen) < len(full.seen) * 0.75
