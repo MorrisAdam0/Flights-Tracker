@@ -30,7 +30,9 @@ those prices move so you can tell whether to book now or wait.
   also tried for Malaysia.
 - **London airports for the short hops:** LHR, LGW, STN, LTN, LCY, SEN.
 
-The London↔hub hops are only searched for hubs that turned out to have long-haul flights.
+To keep the number of searches down, each hub route is first tried on six dates across different
+weekdays, and only routes with nonstops are searched on every date. Use `--thorough` to search every
+route on every date. The London↔hub hops are only searched on dates that connect.
 
 ## Run it
 
@@ -83,7 +85,11 @@ Run `python -m flights_tracker --check` first. It does one search and says what 
   to a headless Chromium that clicks through it, as long as Playwright is installed (above). You
   can force the browser with `--fetcher browser`. To use your own Chrome instead of Playwright's,
   set `CHROMIUM_PATH=/path/to/chrome`.
-- **captcha / rate_limited**: Google has flagged the IP. Wait a while, then use `--workers 1 --delay 5`.
+- **Throttling** ("excessive load generating behavior", rate_limited): Google wants you to slow
+  down. All searches pause (1 min, doubling up to 10) and then carry on. If it keeps happening the
+  run stops. Today's results are cached, so running the same command later picks up where it
+  stopped. To go gentler, use `--workers 1 --delay 5`.
+- **captcha**: Google is showing an "unusual traffic" check. Wait an hour or two.
 - Any run where nearly everything fails stops after a few searches instead of carrying on. The
   previous results and shortlist are kept, and the failing page is saved in `results/debug/`.
 
