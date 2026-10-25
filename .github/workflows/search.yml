@@ -6,29 +6,45 @@ on:
       trip:
         description: "mexico, malaysia or all"
         default: all
+      mode:
+        description: "full (brute force, ~1h) or track (re-price the shortlist, a few minutes)"
+        default: full
   schedule:
-    - cron: "17 7 * * *" # daily, ~07:17 UTC
+    - cron: "17 6 * * 1,4" # full search, Mon & Thu
+    - cron: "17 7 * * *" # daily re-price of the shortlist
 
 permissions:
   contents: write
 
+concurrency:
+  group: flight-search
+
 jobs:
   search:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python -m flights_tracker --trip "${{ inputs.trip || 'all' }}"
+      - name: Search
+        run: |
+          mode="${{ inputs.mode || 'track' }}"
+          if [ "${{ github.event.schedule }}" = "17 6 * * 1,4" ]; then mode=full; fi
+          if [ "$mode" = "track" ] && [ ! -f results/watchlist.json ]; then mode=full; fi
+          args="--trip ${{ inputs.trip || 'all' }}"
+          [ "$mode" = "track" ] && args="$args --track"
+          python -m flights_tracker $args
       - name: Show report
-        run: cat results/latest.md >> "$GITHUB_STEP_SUMMARY"
+        if: always()
+        run: cat results/latest.md >> "$GITHUB_STEP_SUMMARY" || true
       - name: Commit results
+        if: always()
         run: |
           git config user.name "flights-bot"
           git config user.email "flights-bot@users.noreply.github.com"
           git add results
-          git diff --cached --quiet || git commit -m "Flight search results $(date -u +%F)"
-          git push
+          git diff --cached --quiet || git commit -m "Flight prices $(date -u +%F)"
+          git pull --rebase && git push
