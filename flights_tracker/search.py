@@ -134,29 +134,43 @@ class Observation:
     google: dict = field(default_factory=dict)  # summary of Google's price-history series
 
 
-def _iso(sdt) -> str:
-    y, m, d = sdt.date
-    hh, mm = sdt.time
-    return datetime(y, m, d, hh, mm).isoformat()
+def _time(value) -> tuple[int, int]:
+    # Google drops zero components: [8] is 08:00 and [None, 31] is 00:31.
+    padded = [*(value or []), None, None]
+    return padded[0] or 0, padded[1] or 0
 
 
-def _to_legs(results, spec_key: str) -> list[Leg]:
-    legs = []
-    for r in results:
-        if not r.flights or not r.price:
-            continue
-        legs.append(Leg(
-            origin=r.flights[0].from_airport.code,
-            dest=r.flights[-1].to_airport.code,
-            price=int(r.price),
-            airlines=list(r.airlines),
-            segments=[
-                Segment(s.from_airport.code, s.to_airport.code, _iso(s.departure), _iso(s.arrival),
-                        int(s.duration or 0))
-                for s in r.flights
-            ],
-            spec_key=spec_key,
-        ))
+def _segment(raw) -> Segment:
+    y, m, d = raw[20]
+    y2, m2, d2 = raw[21]
+    dep, arr = _time(raw[8]), _time(raw[10])
+    return Segment(raw[3], raw[6], datetime(y, m, d, *dep).isoformat(), datetime(y2, m2, d2, *arr).isoformat(),
+                   int(raw[11] or 0))
+
+
+def legs_from_payload(payload, spec_key: str) -> list[Leg]:
+    """Flights from the results payload. Written here rather than using fast-flights' parser,
+    which crashes on pages with no flights (no airline metadata) and only reads one list."""
+    legs, seen = [], set()
+    groups = []
+    for idx in (2, 3):  # Google's "best" and "other" flights
+        try:
+            groups.append(payload[idx][0] or [])
+        except (IndexError, TypeError):
+            pass
+    for group in groups:
+        for item in group:
+            try:
+                flight, price = item[0], item[1][0][1]
+                segments = [_segment(raw) for raw in flight[2]]
+            except (IndexError, TypeError, ValueError):
+                continue  # an entry without a price or in an unexpected shape
+            if not price or not segments:
+                continue
+            leg = Leg(segments[0].origin, segments[-1].dest, int(price), list(flight[1] or []), segments, spec_key)
+            if (leg.signature, leg.price) not in seen:
+                seen.add((leg.signature, leg.price))
+                legs.append(leg)
     return legs
 
 
@@ -205,29 +219,38 @@ def summarise_series(series: list[tuple[int, float]]) -> dict:
 
 
 def parse_page(html: str, spec_key: str) -> tuple[list[Leg], dict]:
-    from fast_flights.exceptions import FlightsNotFound
-    from fast_flights.parser import parse_js
-
     js = results_script(html)
     if js is None:
         raise PageError(classify(html) or "no_payload")
-    google = {}
+    if "errorHasStatus: true" in js[-300:]:
+        return [], {}  # Google's own "no flights found" answer
     try:
         payload = json.loads(js.split("data:", 1)[1].rsplit(",", 1)[0])
+    except (IndexError, ValueError) as e:
+        raise PageError("parse_error", f"results data unreadable: {e}") from e
+    if not isinstance(payload, list):
+        # Pages served while Google is throttling can carry an empty payload.
+        raise PageError("rate_limited", "empty results payload")
+    google = {}
+    try:
         google = summarise_series(find_price_series(payload))
     except Exception:
         pass
-    try:
-        legs = _to_legs(parse_js(js), spec_key)
-    except FlightsNotFound:
-        legs = []  # a real "no flights on this route/date" answer
-    except Exception as e:
-        raise PageError("parse_error", f"{type(e).__name__}: {e}") from e
-    return legs, google
+    return legs_from_payload(payload, spec_key), google
 
 
 class SearchAborted(Exception):
     pass
+
+
+THROTTLE_SIGNS = ("excessive load", "enhance_your_calm", "enhance your calm", "goaway", "too many requests")
+
+
+def transport_error(e: Exception) -> PageError:
+    msg = str(e)
+    if any(sign in msg.lower() for sign in THROTTLE_SIGNS):
+        return PageError("rate_limited", msg[:200])
+    return PageError("http_error", msg[:200])
 
 
 ADVICE = {
@@ -235,9 +258,10 @@ ADVICE = {
                "pip install playwright && playwright install chromium, then run with --fetcher browser.",
     "captcha": "Google is showing an 'unusual traffic' check to this IP. Wait an hour or two, use fewer "
                "--workers and a bigger --delay, or run from another network.",
-    "rate_limited": "Google is rate-limiting this IP. Wait a while and retry with fewer --workers and a bigger --delay.",
+    "rate_limited": "Google is rate-limiting this IP. Wait an hour or so and re-run (today's results are cached), "
+                    "with --workers 1 --delay 5 if it keeps happening.",
     "no_payload": "The page had no results data. Google may have changed the page; try --fetcher browser.",
-    "parse_error": "The results data has changed shape; fast-flights may need updating (pip install -U fast-flights).",
+    "parse_error": "Google's results data wasn't in the expected shape. Please share the page saved in results/debug/.",
     "http_error": "Network/HTTP errors. Check your connection or proxy.",
 }
 
@@ -246,6 +270,8 @@ class Searcher:
     # Stop the run instead of hammering Google when nothing is getting through.
     ABORT_IF_FIRST_FAIL = 6
     ABORT_AFTER_CONSECUTIVE = 30
+    RATE_LIMIT_RETRIES = 5
+    MAX_COOLDOWNS = 7  # 1, 2, 4, 8, 10, 10, 10 minutes, then give up for now
 
     def __init__(self, use_cache: bool = True, delay: float = 2.0, retries: int = 3, fetcher: str = "auto"):
         self.use_cache = use_cache
@@ -261,6 +287,8 @@ class Searcher:
         self.aborted: str | None = None
         self.debug_pages: list[Path] = []
         self.observations: dict[str, Observation] = {}
+        self.cooldowns = 0
+        self._cool_until = 0.0
         self._lock = threading.Lock()
         CACHE_DIR.mkdir(exist_ok=True)
 
@@ -269,14 +297,15 @@ class Searcher:
         digest = hashlib.sha1(f"{date.today()}|{key}".encode()).hexdigest()[:16]
         return CACHE_DIR / f"{digest}.json"
 
-    def _download(self, spec: Spec) -> str:
+    def _download(self, spec: Spec) -> tuple[list[Leg], dict]:
         html, url, status = self.fetcher.fetch(spec.query().params())
         try:
-            return check_page(html, url, status)
-        except PageError:
+            return parse_page(check_page(html, url, status), spec.key)
+        except PageError as e:
+            # Keep a couple of examples of each kind of bad page, so the cause can be seen.
             with self._lock:
-                if len(self.debug_pages) < 3:
-                    self.debug_pages.append(save_debug(f"{self.fetcher.name}_{spec.key}", html))
+                if sum(e.kind in p.name for p in self.debug_pages) < 2:
+                    self.debug_pages.append(save_debug(f"{e.kind}_{self.fetcher.name}_{spec.key}", html))
             raise
 
     def _switch_to_browser(self, kind: str) -> bool:
@@ -289,6 +318,28 @@ class Searcher:
             print(f"plain requests got '{kind}' pages; switching to the headless browser")
             self.fetcher = BrowserFetcher()
             return True
+
+    def _cool_down(self, why: str) -> None:
+        """Google is throttling: every worker pauses, then carries on with a fresh connection."""
+        with self._lock:
+            if time.time() < self._cool_until:
+                return  # another worker already started this pause
+            self.cooldowns += 1
+            if self.cooldowns > self.MAX_COOLDOWNS:
+                self.aborted = ("Google kept throttling after repeated pauses. Everything found so far is cached "
+                                "for today: run the same command again later and it carries on where it stopped. "
+                                + ADVICE["rate_limited"])
+                return
+            pause = min(60 * 2 ** (self.cooldowns - 1), 600)
+            self._cool_until = time.time() + pause
+            print(f"Google is throttling ({why[:60]}): pausing all searches for {pause // 60} min")
+            if hasattr(self.fetcher, "reset"):
+                self.fetcher.reset()
+
+    def _wait_if_cooling(self) -> None:
+        wait = self._cool_until - time.time()
+        if wait > 0:
+            time.sleep(wait + random.random() * 5)
 
     def _failed(self, key: str, err: Exception) -> None:
         kind = getattr(err, "kind", "http_error")
@@ -316,13 +367,20 @@ class Searcher:
                 if self.aborted:
                     raise SearchAborted(self.aborted)
                 attempt += 1
+                self._wait_if_cooling()
+                if self.aborted:
+                    raise SearchAborted(self.aborted)
                 try:
                     with self._lock:
                         self.queries += 1
-                    legs, google = parse_page(self._download(spec), key)
+                    legs, google = self._download(spec)
                     break
                 except Exception as e:  # network hiccups, rate limiting, consent pages, page changes
-                    err = e if isinstance(e, PageError) else PageError("http_error", str(e))
+                    err = e if isinstance(e, PageError) else transport_error(e)
+                    if err.kind == "rate_limited":
+                        self._cool_down(str(err))
+                        if attempt < self.RATE_LIMIT_RETRIES and not self.aborted:
+                            continue
                     if not err.retryable and not switched and self._switch_to_browser(err.kind):
                         switched = True  # one more go with the headless browser
                         continue
@@ -335,6 +393,8 @@ class Searcher:
             with self._lock:
                 self.successes += 1
                 self.consecutive_failures = 0
+                if time.time() > self._cool_until + 300:
+                    self.cooldowns = 0  # five calm minutes: reset the back-off
             time.sleep(self.delay + random.random())
             path.write_text(json.dumps({"legs": [l.to_dict() for l in legs], "google": google}))
         with self._lock:

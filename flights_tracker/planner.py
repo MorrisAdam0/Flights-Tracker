@@ -126,34 +126,72 @@ def _keep_best(best: dict, key, route: Route) -> None:
         best[key] = route
 
 
-def plan(trip: Trip, searcher: Searcher, workers: int = 3, log=print) -> list[Itinerary]:
+def _hub_long_haul(trip: Trip, searcher: Searcher, workers: int, thorough: bool, log) -> dict[tuple, list[Leg]]:
+    """Nonstops hub -> gateway (outbound days) and gateway -> hub (return days).
+
+    Most hub/gateway pairs have no nonstop at all. Unless `thorough`, the return days (only 3)
+    are searched in full but the outbound days only on a few dates, and a pair counts as served
+    if either direction turned up a flight (or a search failed, so we can't tell). Together that
+    covers six dates on different weekdays before ruling a route out. Served pairs then get every
+    outbound date."""
+    hubs = list(trip.hubs)
+    out_days = C.days(C.OUTBOUND_DATES[0], C.OUTBOUND_DATES[-1] + timedelta(C.MAX_STOPOVER_DAYS))
+    pairs = list(product(hubs, trip.hub_gateways))
+    probe_out = out_days if thorough else out_days[::3]
+    specs = [(h, g, d, 0, None) for (h, g), d in product(pairs, probe_out)]
+    specs += [(g, h, d, 0, None) for (h, g), d in product(pairs, C.RETURN_DATES)]
+    log(f"[{trip.name}] step 1b: {len(specs)} hub long-haul searches" + ("" if thorough else " (finding which routes exist)"))
+    results = _run(searcher, specs, workers)
+    if thorough:
+        return results
+
+    served = set()
+    for spec, legs in results.items():
+        if legs or spec_key(spec) not in searcher.observations:  # found flights, or the search failed
+            a, b = spec[:2]
+            served.add((a, b) if a in trip.hubs else (b, a))
+    fill = [(h, g, d, 0, None) for (h, g) in pairs if (h, g) in served for d in out_days if d not in probe_out]
+    log(f"[{trip.name}] step 1c: {len(served)} hub routes have nonstops; {len(fill)} more searches for their other dates")
+    return {**results, **_run(searcher, fill, workers)}
+
+
+def spec_key(spec: tuple) -> str:
+    from .search import Spec
+
+    origin, dest, day, stops, minutes = spec
+    return Spec(origin, dest, day, None, stops, minutes).key
+
+
+def plan(trip: Trip, searcher: Searcher, workers: int = 2, thorough: bool = False, log=print) -> list[Itinerary]:
     gws, hubs = list(trip.gateways), list(trip.hubs)
-    hub_out_days = C.days(C.OUTBOUND_DATES[0], C.OUTBOUND_DATES[-1] + timedelta(C.MAX_STOPOVER_DAYS))
     home_days = C.days(C.RETURN_DATES[0], C.LATEST_ARRIVAL_HOME)
 
     # 1. Direct one-ways, and the long-haul nonstops from each hub.
     specs = (
         [(o, g, d, C.MAX_STOPS, C.MAX_JOURNEY_MINUTES) for o, g, d in product(C.LONDON_LONG_HAUL, gws, C.OUTBOUND_DATES)]
         + [(g, o, d, C.MAX_STOPS, C.MAX_JOURNEY_MINUTES) for g, o, d in product(gws, C.LONDON_LONG_HAUL, C.RETURN_DATES)]
-        + [(h, g, d, 0, None) for h, g, d in product(hubs, trip.hub_gateways, hub_out_days)]
-        + [(g, h, d, 0, None) for g, h, d in product(trip.hub_gateways, hubs, C.RETURN_DATES)]
     )
-    log(f"[{trip.name}] step 1: {len(specs)} direct and hub long-haul searches")
-    r1 = _run(searcher, specs, workers)
-    legs = _flat(r1)
+    log(f"[{trip.name}] step 1a: {len(specs)} direct-from-London searches")
+    legs = _flat(_run(searcher, specs, workers)) + _flat(_hub_long_haul(trip, searcher, workers, thorough, log))
     direct_out = [l for l in legs if l.origin in C.LONDON_LONG_HAUL and direct_ok(l)]
     direct_back = [l for l in legs if l.dest in C.LONDON_LONG_HAUL and direct_ok(l) and home_in_time(l)]
     lh_out = [l for l in legs if l.origin in hubs and l.stops == 0]
     lh_back = [l for l in legs if l.dest in hubs and l.stops == 0]
 
-    # 2. Short nonstop hops between London and the hubs that turned out to have long-haul service.
-    out_hubs = sorted({l.origin for l in lh_out})
-    back_hubs = sorted({l.dest for l in lh_back})
-    specs = (
-        [(o, h, d, 0, None) for o, h, d in product(C.LONDON_ALL, out_hubs, C.OUTBOUND_DATES)]
-        + [(h, o, d, 0, None) for h, o, d in product(back_hubs, C.LONDON_ALL, home_days)]
+    # 2. Short nonstop hops between London and the hubs, only on dates that can connect:
+    #    up to MAX_STOPOVER_DAYS before a long-haul departure, or after a long-haul arrival.
+    span = range(C.MAX_STOPOVER_DAYS + 1)
+    out_dates = {(l.origin, l.depart.date() - timedelta(k)) for l in lh_out for k in span}
+    back_dates = {(l.dest, l.arrive.date() + timedelta(k)) for l in lh_back for k in span}
+    # Hub return tickets only give the return date, so allow hops home up to 3 days after it.
+    back_dates |= {(l.dest, l.depart.date() + timedelta(k)) for l in lh_back for k in range(C.MAX_STOPOVER_DAYS + 2)}
+    specs = sorted(
+        [(o, h, d, 0, None) for o in C.LONDON_ALL for h, d in out_dates if d in C.OUTBOUND_DATES]
+        + [(h, o, d, 0, None) for o in C.LONDON_ALL for h, d in back_dates if d in home_days],
+        key=str,
     )
-    log(f"[{trip.name}] step 2: {len(specs)} London<->hub searches ({len(out_hubs)} hubs out, {len(back_hubs)} back)")
+    log(f"[{trip.name}] step 2: {len(specs)} London<->hub searches "
+        f"({len({h for h, _ in out_dates})} hubs out, {len({h for h, _ in back_dates})} back)")
     legs = _flat(_run(searcher, specs, workers))
     to_hub = [l for l in legs if l.origin in C.LONDON_ALL and l.stops == 0]
     from_hub = [l for l in legs if l.dest in C.LONDON_ALL and l.stops == 0 and home_in_time(l)]

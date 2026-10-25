@@ -37,9 +37,11 @@ def main() -> None:
     ap.add_argument("--check", action="store_true", help="run one search to test the connection to Google, then stop")
     ap.add_argument("--fetcher", choices=["auto", "http", "browser"], default="auto",
                     help="auto: plain requests, switching to headless Chromium if Google blocks them")
+    ap.add_argument("--thorough", action="store_true",
+                    help="search every hub route on every date, instead of probing which routes exist first")
     ap.add_argument("--top", type=int, default=20, help="rows per trip in the report")
-    ap.add_argument("--workers", type=int, default=3, help="parallel searches (keep low to avoid rate limits)")
-    ap.add_argument("--delay", type=float, default=2.0, help="seconds between searches per worker")
+    ap.add_argument("--workers", type=int, default=2, help="parallel searches (keep low to avoid rate limits)")
+    ap.add_argument("--delay", type=float, default=3.0, help="seconds between searches per worker")
     ap.add_argument("--no-cache", action="store_true", help="ignore today's cached results")
     args = ap.parse_args()
 
@@ -60,7 +62,7 @@ def main() -> None:
             if args.track:
                 results[trip.name] = history.reprice([i for i in watch if i.trip == trip.name], searcher)
             else:
-                results[trip.name] = plan(trip, searcher, workers=args.workers)
+                results[trip.name] = plan(trip, searcher, workers=args.workers, thorough=args.thorough)
     except SearchAborted as e:
         # Keep the previous results, shortlist and history as they were.
         path = report.save([f"## Search stopped\n\n{e}\n"], searcher.failures, args.track)

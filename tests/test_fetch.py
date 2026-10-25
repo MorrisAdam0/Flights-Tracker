@@ -91,7 +91,7 @@ def test_stops_early_when_everything_fails(searcher):
             searcher.search(spec(n))
     assert "consent" in str(e.value) and "playwright" in str(e.value)
     assert searcher.fetcher.calls == Searcher.ABORT_IF_FIRST_FAIL  # consent pages aren't retried
-    assert len(searcher.debug_pages) == 3 and searcher.debug_pages[0].exists()
+    assert len(searcher.debug_pages) == 2 and searcher.debug_pages[0].exists()
 
 
 def test_switches_to_browser_on_consent(searcher, monkeypatch):
@@ -110,3 +110,68 @@ def test_no_switch_when_mode_is_http(tmp_path, monkeypatch):
     s = Searcher(use_cache=False, delay=0, fetcher="http")
     s.fetcher = FakeFetcher(CONSENT)
     assert s.search(spec()) == [] and s.failure_kinds == {"consent": 1}
+
+
+def test_empty_results_page_is_no_flights_not_an_error():
+    # The page Google returns for a route with no nonstops: no flights and no airline metadata.
+    # fast-flights' own parser crashed on this, which was the run's "parse_error".
+    payload = [None] * 8
+    html = (f"<script class=\"ds:1\">AF_initDataCallback({{key: 'ds:1', hash: '1', "
+            f"data:{json.dumps(payload)}, sideChannel: {{}}}});</script>")
+    assert parse_page(html, "k") == ([], {})
+
+
+def test_reads_best_and_other_lists_and_skips_odd_entries():
+    page = json.loads(results_page(500).split("data:", 1)[1].rsplit(",", 1)[0])
+    good = page[3][0][0]
+    cheaper = json.loads(json.dumps(good))
+    cheaper[1][0][1] = 450
+    page[2] = [[good, cheaper, [None, None], ["junk"]]]  # duplicate of good, a new fare, two odd entries
+    legs = search.legs_from_payload(page, "k")
+    assert sorted(l.price for l in legs) == [450, 500]
+
+
+class ThrottledFetcher(FakeFetcher):
+    """Raises the HTTP/2 'enhance your calm' error a few times, then works."""
+
+    def __init__(self, failures):
+        super().__init__(results_page(500))
+        self.failures = failures
+
+    def fetch(self, params):
+        self.calls += 1
+        if self.calls <= self.failures:
+            raise RuntimeError("h2 connection driver error: connection error detected: "
+                               "detected excessive load generating behavior")
+        return super().fetch(params)
+
+    def reset(self):
+        self.resets = getattr(self, "resets", 0) + 1
+
+
+def test_throttling_pauses_and_recovers(searcher, monkeypatch):
+    sleeps = []
+    monkeypatch.setattr(search.time, "sleep", sleeps.append)
+    searcher.fetcher = ThrottledFetcher(failures=2)
+    legs = searcher.search(spec())
+    assert legs[0].price == 500 and not searcher.failures
+    assert searcher.cooldowns == 1 and searcher.fetcher.resets == 1  # one shared pause, fresh connection
+    assert max(sleeps) >= 60
+
+
+def test_gives_up_politely_when_throttling_never_stops(searcher, monkeypatch):
+    monkeypatch.setattr(search.time, "sleep", lambda s: None)
+    monkeypatch.setattr(search.time, "time", iter(range(0, 10**9, 10_000)).__next__)  # every pause has elapsed
+    searcher.fetcher = ThrottledFetcher(failures=10**6)
+    with pytest.raises(SearchAborted) as e:
+        for n in range(50):
+            searcher.search(spec(n))
+    assert "carries on where it stopped" in str(e.value)
+
+
+def test_unreadable_results_page_is_saved_for_diagnosis(searcher):
+    bad = "<script class=\"ds:1\">AF_initDataCallback({key: 'ds:1', hash: '1', data:{oops, sideChannel: {}});</script>"
+    searcher.fetcher = FakeFetcher(bad)
+    assert searcher.search(spec()) == []
+    assert searcher.failure_kinds == {"parse_error": 1}
+    assert searcher.debug_pages and searcher.debug_pages[0].read_text() == bad

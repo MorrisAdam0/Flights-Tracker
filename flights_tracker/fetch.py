@@ -81,9 +81,15 @@ class HttpFetcher:
 
     def __init__(self):
         self._local = threading.local()
+        self._generation = 0
+
+    def reset(self) -> None:
+        """Drop the connections; each worker opens a fresh one on its next request."""
+        self._generation += 1
 
     def _client(self):
-        if not hasattr(self._local, "client"):
+        if getattr(self._local, "generation", None) != self._generation:
+            self._local.generation = self._generation
             from primp import Client
 
             self._local.client = Client(impersonate="chrome_145", impersonate_os="macos", referer=True,
