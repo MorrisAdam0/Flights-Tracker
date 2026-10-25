@@ -14,6 +14,8 @@ from dataclasses import asdict, dataclass, field
 from datetime import date, datetime
 from pathlib import Path
 
+from .fetch import BrowserFetcher, HttpFetcher, PageError, browser_available, check_page, classify, results_script, save_debug
+
 CACHE_DIR = Path(__file__).resolve().parent.parent / ".cache"
 
 
@@ -203,13 +205,12 @@ def summarise_series(series: list[tuple[int, float]]) -> dict:
 
 
 def parse_page(html: str, spec_key: str) -> tuple[list[Leg], dict]:
+    from fast_flights.exceptions import FlightsNotFound
     from fast_flights.parser import parse_js
-    from selectolax.lexbor import LexborHTMLParser
 
-    script = LexborHTMLParser(html).css_first(r"script.ds\:1")
-    if script is None:
-        raise RuntimeError("no results payload in page (blocked or consent page?)")
-    js = script.text()
+    js = results_script(html)
+    if js is None:
+        raise PageError(classify(html) or "no_payload")
     google = {}
     try:
         payload = json.loads(js.split("data:", 1)[1].rsplit(",", 1)[0])
@@ -218,21 +219,47 @@ def parse_page(html: str, spec_key: str) -> tuple[list[Leg], dict]:
         pass
     try:
         legs = _to_legs(parse_js(js), spec_key)
+    except FlightsNotFound:
+        legs = []  # a real "no flights on this route/date" answer
     except Exception as e:
-        if "FlightsNotFound" in type(e).__name__ or "errorHasStatus" in js:
-            legs = []
-        else:
-            raise
+        raise PageError("parse_error", f"{type(e).__name__}: {e}") from e
     return legs, google
 
 
+class SearchAborted(Exception):
+    pass
+
+
+ADVICE = {
+    "consent": "Google showed its cookie-consent page instead of results. Install the browser fallback: "
+               "pip install playwright && playwright install chromium, then run with --fetcher browser.",
+    "captcha": "Google is showing an 'unusual traffic' check to this IP. Wait an hour or two, use fewer "
+               "--workers and a bigger --delay, or run from another network.",
+    "rate_limited": "Google is rate-limiting this IP. Wait a while and retry with fewer --workers and a bigger --delay.",
+    "no_payload": "The page had no results data. Google may have changed the page; try --fetcher browser.",
+    "parse_error": "The results data has changed shape; fast-flights may need updating (pip install -U fast-flights).",
+    "http_error": "Network/HTTP errors. Check your connection or proxy.",
+}
+
+
 class Searcher:
-    def __init__(self, use_cache: bool = True, delay: float = 2.0, retries: int = 3):
+    # Stop the run instead of hammering Google when nothing is getting through.
+    ABORT_IF_FIRST_FAIL = 6
+    ABORT_AFTER_CONSECUTIVE = 30
+
+    def __init__(self, use_cache: bool = True, delay: float = 2.0, retries: int = 3, fetcher: str = "auto"):
         self.use_cache = use_cache
         self.delay = delay
         self.retries = retries
+        self.mode = fetcher
+        self.fetcher = BrowserFetcher() if fetcher == "browser" else HttpFetcher()
         self.queries = 0
+        self.successes = 0
+        self.consecutive_failures = 0
+        self.failure_kinds: dict[str, int] = {}
         self.failures: list[str] = []
+        self.aborted: str | None = None
+        self.debug_pages: list[Path] = []
         self.observations: dict[str, Observation] = {}
         self._lock = threading.Lock()
         CACHE_DIR.mkdir(exist_ok=True)
@@ -243,9 +270,39 @@ class Searcher:
         return CACHE_DIR / f"{digest}.json"
 
     def _download(self, spec: Spec) -> str:
-        from fast_flights import fetch_flights_html
+        html, url, status = self.fetcher.fetch(spec.query().params())
+        try:
+            return check_page(html, url, status)
+        except PageError:
+            with self._lock:
+                if len(self.debug_pages) < 3:
+                    self.debug_pages.append(save_debug(f"{self.fetcher.name}_{spec.key}", html))
+            raise
 
-        return fetch_flights_html(spec.query())
+    def _switch_to_browser(self, kind: str) -> bool:
+        """In auto mode, move to the headless browser the first time plain requests are refused."""
+        with self._lock:
+            if self.fetcher.name == "browser":
+                return self.mode == "auto"  # another thread already switched
+            if self.mode != "auto" or kind not in ("consent", "captcha", "no_payload") or not browser_available():
+                return False
+            print(f"plain requests got '{kind}' pages; switching to the headless browser")
+            self.fetcher = BrowserFetcher()
+            return True
+
+    def _failed(self, key: str, err: Exception) -> None:
+        kind = getattr(err, "kind", "http_error")
+        with self._lock:
+            self.failures.append(f"{key}: {err}")
+            self.failure_kinds[kind] = self.failure_kinds.get(kind, 0) + 1
+            self.consecutive_failures += 1
+            if self.aborted is None and (
+                (self.successes == 0 and self.consecutive_failures >= self.ABORT_IF_FIRST_FAIL)
+                or self.consecutive_failures >= self.ABORT_AFTER_CONSECUTIVE
+            ):
+                self.aborted = f"{self.consecutive_failures} searches in a row failed ({kind}). {ADVICE.get(kind, '')}"
+                if self.debug_pages:
+                    self.aborted += f" A failing page was saved to {self.debug_pages[0]}."
 
     def search(self, spec: Spec) -> list[Leg]:
         key = spec.key
@@ -254,18 +311,30 @@ class Searcher:
             cached = json.loads(path.read_text())
             legs, google = [Leg.from_dict(d) for d in cached["legs"]], cached["google"]
         else:
-            for attempt in range(1, self.retries + 1):
+            attempt, switched = 0, False
+            while True:
+                if self.aborted:
+                    raise SearchAborted(self.aborted)
+                attempt += 1
                 try:
                     with self._lock:
                         self.queries += 1
                     legs, google = parse_page(self._download(spec), key)
                     break
-                except Exception as e:  # network hiccups, rate limiting, page changes
-                    if attempt == self.retries:
-                        with self._lock:
-                            self.failures.append(f"{key}: {e}")
+                except Exception as e:  # network hiccups, rate limiting, consent pages, page changes
+                    err = e if isinstance(e, PageError) else PageError("http_error", str(e))
+                    if not err.retryable and not switched and self._switch_to_browser(err.kind):
+                        switched = True  # one more go with the headless browser
+                        continue
+                    if not err.retryable or attempt >= self.retries:
+                        self._failed(key, err)
+                        if self.aborted:
+                            raise SearchAborted(self.aborted)
                         return []
-                    time.sleep(self.delay * 2**attempt)
+                    time.sleep(30 * attempt if err.kind == "rate_limited" else self.delay * 2**attempt)
+            with self._lock:
+                self.successes += 1
+                self.consecutive_failures = 0
             time.sleep(self.delay + random.random())
             path.write_text(json.dumps({"legs": [l.to_dict() for l in legs], "google": google}))
         with self._lock:
