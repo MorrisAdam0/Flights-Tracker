@@ -297,14 +297,15 @@ class Searcher:
         digest = hashlib.sha1(f"{date.today()}|{key}".encode()).hexdigest()[:16]
         return CACHE_DIR / f"{digest}.json"
 
-    def _download(self, spec: Spec) -> str:
+    def _download(self, spec: Spec) -> tuple[list[Leg], dict]:
         html, url, status = self.fetcher.fetch(spec.query().params())
         try:
-            return check_page(html, url, status)
-        except PageError:
+            return parse_page(check_page(html, url, status), spec.key)
+        except PageError as e:
+            # Keep a couple of examples of each kind of bad page, so the cause can be seen.
             with self._lock:
-                if len(self.debug_pages) < 3:
-                    self.debug_pages.append(save_debug(f"{self.fetcher.name}_{spec.key}", html))
+                if sum(e.kind in p.name for p in self.debug_pages) < 2:
+                    self.debug_pages.append(save_debug(f"{e.kind}_{self.fetcher.name}_{spec.key}", html))
             raise
 
     def _switch_to_browser(self, kind: str) -> bool:
@@ -372,7 +373,7 @@ class Searcher:
                 try:
                     with self._lock:
                         self.queries += 1
-                    legs, google = parse_page(self._download(spec), key)
+                    legs, google = self._download(spec)
                     break
                 except Exception as e:  # network hiccups, rate limiting, consent pages, page changes
                     err = e if isinstance(e, PageError) else transport_error(e)

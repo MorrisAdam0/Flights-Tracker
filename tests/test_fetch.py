@@ -91,7 +91,7 @@ def test_stops_early_when_everything_fails(searcher):
             searcher.search(spec(n))
     assert "consent" in str(e.value) and "playwright" in str(e.value)
     assert searcher.fetcher.calls == Searcher.ABORT_IF_FIRST_FAIL  # consent pages aren't retried
-    assert len(searcher.debug_pages) == 3 and searcher.debug_pages[0].exists()
+    assert len(searcher.debug_pages) == 2 and searcher.debug_pages[0].exists()
 
 
 def test_switches_to_browser_on_consent(searcher, monkeypatch):
@@ -167,3 +167,11 @@ def test_gives_up_politely_when_throttling_never_stops(searcher, monkeypatch):
         for n in range(50):
             searcher.search(spec(n))
     assert "carries on where it stopped" in str(e.value)
+
+
+def test_unreadable_results_page_is_saved_for_diagnosis(searcher):
+    bad = "<script class=\"ds:1\">AF_initDataCallback({key: 'ds:1', hash: '1', data:{oops, sideChannel: {}});</script>"
+    searcher.fetcher = FakeFetcher(bad)
+    assert searcher.search(spec()) == []
+    assert searcher.failure_kinds == {"parse_error": 1}
+    assert searcher.debug_pages and searcher.debug_pages[0].read_text() == bad
