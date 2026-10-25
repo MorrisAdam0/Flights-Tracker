@@ -28,7 +28,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt && playwright install --with-deps chromium
+      - name: Check Google is reachable
+        run: python -m flights_tracker --check
       - name: Search
         run: |
           mode="${{ inputs.mode || 'track' }}"
@@ -37,6 +39,13 @@ jobs:
           args="--trip ${{ inputs.trip || 'all' }}"
           [ "$mode" = "track" ] && args="$args --track"
           python -m flights_tracker $args
+      - name: Keep failing pages for diagnosis
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-pages
+          path: results/debug/
+          if-no-files-found: ignore
       - name: Show report
         if: always()
         run: cat results/latest.md >> "$GITHUB_STEP_SUMMARY" || true

@@ -36,6 +36,8 @@ The London↔hub hops are only searched for hubs that turned out to have long-ha
 
 ```sh
 pip install -r requirements.txt
+playwright install chromium               # browser fallback (see Troubleshooting)
+python -m flights_tracker --check         # one test search: run this first
 python -m flights_tracker                 # full brute force, both trips (~1,500–3,000 searches, ~1h)
 python -m flights_tracker --trip mexico   # one trip
 python -m flights_tracker --track         # re-price only the shortlist from the last full run (minutes)
@@ -71,6 +73,19 @@ climbed.
 `.github/workflows/search.yml` runs a full search on Mondays and Thursdays and re-prices the
 shortlist every day. Each run commits to `results/`, so the history builds up in the repo. You can
 also start it by hand: Actions → Flight search → Run workflow.
+
+## Troubleshooting
+
+Run `python -m flights_tracker --check` first. It does one search and says what went wrong.
+
+- **consent**: from the UK/EU, Google shows a "Before you continue" cookie page instead of results.
+  Requests already send consent cookies. If Google still shows the page, the tool switches by itself
+  to a headless Chromium that clicks through it, as long as Playwright is installed (above). You
+  can force the browser with `--fetcher browser`. To use your own Chrome instead of Playwright's,
+  set `CHROMIUM_PATH=/path/to/chrome`.
+- **captcha / rate_limited**: Google has flagged the IP. Wait a while, then use `--workers 1 --delay 5`.
+- Any run where nearly everything fails stops after a few searches instead of carrying on. The
+  previous results and shortlist are kept, and the failing page is saved in `results/debug/`.
 
 ## Tests
 
