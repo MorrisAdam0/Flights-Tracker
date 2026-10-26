@@ -1,0 +1,3275 @@
+[
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1037,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-31T21:26:00",
+      "arrive": "2027-01-01T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-31|2027-01-07|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1067,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-31T21:26:00",
+      "arrive": "2027-01-01T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-31|2027-01-08|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1067,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-31T21:26:00",
+      "arrive": "2027-01-01T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-31|2027-01-09|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "CUN",
+  "fly_out": "CUN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "CUN",
+    "price": 821,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "CDG",
+      "depart": "2026-12-31T08:55:00",
+      "arrive": "2026-12-31T11:20:00",
+      "minutes": 85
+     },
+     {
+      "origin": "CDG",
+      "dest": "CUN",
+      "depart": "2026-12-31T13:10:00",
+      "arrive": "2026-12-31T18:25:00",
+      "minutes": 675
+     }
+    ],
+    "spec_key": "rt|LHR|CUN|2026-12-31|2027-01-07|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "flight CUN\u2192MEX 02 Jan",
+    190
+   ],
+   [
+    "flight MEX\u2192CUN 05 Jan",
+    75
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "CUN",
+  "fly_out": "CUN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "CUN",
+    "price": 825,
+    "airlines": [
+     "Virgin Atlantic"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "CUN",
+      "depart": "2026-12-30T13:00:00",
+      "arrive": "2026-12-30T19:01:00",
+      "minutes": 661
+     }
+    ],
+    "spec_key": "rt|LHR|CUN|2026-12-30|2027-01-08|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "flight CUN\u2192MEX 02 Jan",
+    190
+   ],
+   [
+    "flight MEX\u2192CUN 05 Jan",
+    75
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Direct one-ways",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 614,
+    "airlines": [
+     "Virgin Atlantic",
+     "Delta"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "ATL",
+      "depart": "2026-12-31T10:50:00",
+      "arrive": "2026-12-31T15:15:00",
+      "minutes": 565
+     },
+     {
+      "origin": "ATL",
+      "dest": "MEX",
+      "depart": "2026-12-31T17:56:00",
+      "arrive": "2026-12-31T20:45:00",
+      "minutes": 229
+     }
+    ],
+    "spec_key": "ow|LHR|MEX|2026-12-31||1|960"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-07T00:45:00",
+      "arrive": "2027-01-07T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-07T08:05:00",
+      "arrive": "2027-01-07T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Direct one-ways",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 614,
+    "airlines": [
+     "Virgin Atlantic",
+     "Delta"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "ATL",
+      "depart": "2026-12-31T10:50:00",
+      "arrive": "2026-12-31T15:15:00",
+      "minutes": 565
+     },
+     {
+      "origin": "ATL",
+      "dest": "MEX",
+      "depart": "2026-12-31T17:56:00",
+      "arrive": "2026-12-31T20:45:00",
+      "minutes": 229
+     }
+    ],
+    "spec_key": "ow|LHR|MEX|2026-12-31||1|960"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-08T00:45:00",
+      "arrive": "2027-01-08T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-08T08:05:00",
+      "arrive": "2027-01-08T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Direct one-ways",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 614,
+    "airlines": [
+     "Virgin Atlantic",
+     "Delta"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "ATL",
+      "depart": "2026-12-31T10:50:00",
+      "arrive": "2026-12-31T15:15:00",
+      "minutes": 565
+     },
+     {
+      "origin": "ATL",
+      "dest": "MEX",
+      "depart": "2026-12-31T17:56:00",
+      "arrive": "2026-12-31T20:45:00",
+      "minutes": 229
+     }
+    ],
+    "spec_key": "ow|LHR|MEX|2026-12-31||1|960"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-09T00:45:00",
+      "arrive": "2027-01-09T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-09T08:05:00",
+      "arrive": "2027-01-09T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "CUN",
+  "fly_out": "CUN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "CUN",
+    "price": 862,
+    "airlines": [
+     "Air Canada"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "YUL",
+      "depart": "2026-12-31T13:00:00",
+      "arrive": "2026-12-31T15:35:00",
+      "minutes": 455
+     },
+     {
+      "origin": "YUL",
+      "dest": "CUN",
+      "depart": "2026-12-31T17:55:00",
+      "arrive": "2026-12-31T22:45:00",
+      "minutes": 290
+     }
+    ],
+    "spec_key": "rt|LHR|CUN|2026-12-31|2027-01-09|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "flight CUN\u2192MEX 02 Jan",
+    190
+   ],
+   [
+    "flight MEX\u2192CUN 05 Jan",
+    75
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1128,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-29T14:30:00",
+      "arrive": "2026-12-29T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-29T21:26:00",
+      "arrive": "2026-12-30T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-29|2027-01-07|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1138,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-30T14:30:00",
+      "arrive": "2026-12-30T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-30T21:26:00",
+      "arrive": "2026-12-31T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-30|2027-01-07|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1158,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-29T14:30:00",
+      "arrive": "2026-12-29T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-29T21:26:00",
+      "arrive": "2026-12-30T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-29|2027-01-08|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1158,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-29T14:30:00",
+      "arrive": "2026-12-29T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-29T21:26:00",
+      "arrive": "2026-12-30T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-29|2027-01-09|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Direct one-ways",
+  "fly_in": "MEX",
+  "fly_out": "CUN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 614,
+    "airlines": [
+     "Virgin Atlantic",
+     "Delta"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "ATL",
+      "depart": "2026-12-31T10:50:00",
+      "arrive": "2026-12-31T15:15:00",
+      "minutes": 565
+     },
+     {
+      "origin": "ATL",
+      "dest": "MEX",
+      "depart": "2026-12-31T17:56:00",
+      "arrive": "2026-12-31T20:45:00",
+      "minutes": 229
+     }
+    ],
+    "spec_key": "ow|LHR|MEX|2026-12-31||1|960"
+   },
+   {
+    "origin": "CUN",
+    "dest": "LHR",
+    "price": 471,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "CUN",
+      "dest": "JFK",
+      "depart": "2027-01-07T12:35:00",
+      "arrive": "2027-01-07T16:35:00",
+      "minutes": 240
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-07T18:10:00",
+      "arrive": "2027-01-08T06:15:00",
+      "minutes": 425
+     }
+    ],
+    "spec_key": "ow|CUN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "flight MEX\u2192CUN 05 Jan",
+    75
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Direct one-ways",
+  "fly_in": "MEX",
+  "fly_out": "CUN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 614,
+    "airlines": [
+     "Virgin Atlantic",
+     "Delta"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "ATL",
+      "depart": "2026-12-31T10:50:00",
+      "arrive": "2026-12-31T15:15:00",
+      "minutes": 565
+     },
+     {
+      "origin": "ATL",
+      "dest": "MEX",
+      "depart": "2026-12-31T17:56:00",
+      "arrive": "2026-12-31T20:45:00",
+      "minutes": 229
+     }
+    ],
+    "spec_key": "ow|LHR|MEX|2026-12-31||1|960"
+   },
+   {
+    "origin": "CUN",
+    "dest": "LHR",
+    "price": 471,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "CUN",
+      "dest": "JFK",
+      "depart": "2027-01-09T17:05:00",
+      "arrive": "2027-01-09T21:05:00",
+      "minutes": 240
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-09T23:20:00",
+      "arrive": "2027-01-10T11:10:00",
+      "minutes": 410
+     }
+    ],
+    "spec_key": "ow|CUN|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "flight MEX\u2192CUN 05 Jan",
+    75
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1168,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-30T14:30:00",
+      "arrive": "2026-12-30T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-30T21:26:00",
+      "arrive": "2026-12-31T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-30|2027-01-08|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "London return",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MEX",
+    "price": 1168,
+    "airlines": [
+     "British Airways",
+     "American"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MIA",
+      "depart": "2026-12-30T14:30:00",
+      "arrive": "2026-12-30T19:30:00",
+      "minutes": 600
+     },
+     {
+      "origin": "MIA",
+      "dest": "MEX",
+      "depart": "2026-12-30T21:26:00",
+      "arrive": "2026-12-31T00:07:00",
+      "minutes": 221
+     }
+    ],
+    "spec_key": "rt|LHR|MEX|2026-12-30|2027-01-09|1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via AMS, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "AMS",
+    "price": 43,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "AMS",
+      "depart": "2026-12-31T06:00:00",
+      "arrive": "2026-12-31T08:25:00",
+      "minutes": 85
+     }
+    ],
+    "spec_key": "ow|LGW|AMS|2026-12-31||0|"
+   },
+   {
+    "origin": "AMS",
+    "dest": "MEX",
+    "price": 651,
+    "airlines": [
+     "KLM"
+    ],
+    "segments": [
+     {
+      "origin": "AMS",
+      "dest": "MEX",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|AMS|MEX|2026-12-31||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-07T00:45:00",
+      "arrive": "2027-01-07T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-07T08:05:00",
+      "arrive": "2027-01-07T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via AMS, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "AMS",
+    "price": 43,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "AMS",
+      "depart": "2026-12-31T06:00:00",
+      "arrive": "2026-12-31T08:25:00",
+      "minutes": 85
+     }
+    ],
+    "spec_key": "ow|LGW|AMS|2026-12-31||0|"
+   },
+   {
+    "origin": "AMS",
+    "dest": "MEX",
+    "price": 651,
+    "airlines": [
+     "KLM"
+    ],
+    "segments": [
+     {
+      "origin": "AMS",
+      "dest": "MEX",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|AMS|MEX|2026-12-31||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-08T00:45:00",
+      "arrive": "2027-01-08T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-08T08:05:00",
+      "arrive": "2027-01-08T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via AMS, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "AMS",
+    "price": 43,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "AMS",
+      "depart": "2026-12-31T06:00:00",
+      "arrive": "2026-12-31T08:25:00",
+      "minutes": 85
+     }
+    ],
+    "spec_key": "ow|LGW|AMS|2026-12-31||0|"
+   },
+   {
+    "origin": "AMS",
+    "dest": "MEX",
+    "price": 651,
+    "airlines": [
+     "KLM"
+    ],
+    "segments": [
+     {
+      "origin": "AMS",
+      "dest": "MEX",
+      "depart": "2026-12-31T14:30:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|AMS|MEX|2026-12-31||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-09T00:45:00",
+      "arrive": "2027-01-09T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-09T08:05:00",
+      "arrive": "2027-01-09T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via CDG, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "CDG",
+    "price": 51,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "CDG",
+      "depart": "2026-12-29T06:10:00",
+      "arrive": "2026-12-29T08:30:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|LGW|CDG|2026-12-29||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "MEX",
+    "price": 645,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "MEX",
+      "depart": "2026-12-29T11:45:00",
+      "arrive": "2026-12-29T16:55:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|CDG|MEX|2026-12-29||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-07T00:45:00",
+      "arrive": "2027-01-07T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-07T08:05:00",
+      "arrive": "2027-01-07T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via CDG, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "CDG",
+    "price": 51,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "CDG",
+      "depart": "2026-12-29T06:10:00",
+      "arrive": "2026-12-29T08:30:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|LGW|CDG|2026-12-29||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "MEX",
+    "price": 645,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "MEX",
+      "depart": "2026-12-29T11:45:00",
+      "arrive": "2026-12-29T16:55:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|CDG|MEX|2026-12-29||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-08T00:45:00",
+      "arrive": "2027-01-08T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-08T08:05:00",
+      "arrive": "2027-01-08T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via CDG, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LGW",
+    "dest": "CDG",
+    "price": 51,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "LGW",
+      "dest": "CDG",
+      "depart": "2026-12-29T06:10:00",
+      "arrive": "2026-12-29T08:30:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|LGW|CDG|2026-12-29||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "MEX",
+    "price": 645,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "MEX",
+      "depart": "2026-12-29T11:45:00",
+      "arrive": "2026-12-29T16:55:00",
+      "minutes": 730
+     }
+    ],
+    "spec_key": "ow|CDG|MEX|2026-12-29||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-09T00:45:00",
+      "arrive": "2027-01-09T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-09T08:05:00",
+      "arrive": "2027-01-09T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via CDG, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "SEN",
+    "dest": "CDG",
+    "price": 51,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "SEN",
+      "dest": "CDG",
+      "depart": "2026-12-30T07:10:00",
+      "arrive": "2026-12-30T09:20:00",
+      "minutes": 70
+     }
+    ],
+    "spec_key": "ow|SEN|CDG|2026-12-30||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "MEX",
+    "price": 645,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "MEX",
+      "depart": "2026-12-30T15:50:00",
+      "arrive": "2026-12-30T20:55:00",
+      "minutes": 725
+     }
+    ],
+    "spec_key": "ow|CDG|MEX|2026-12-30||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-07T00:45:00",
+      "arrive": "2027-01-07T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-07T08:05:00",
+      "arrive": "2027-01-07T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Mexico",
+  "strategy": "Out via CDG, back direct",
+  "fly_in": "MEX",
+  "fly_out": "MEX",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "SEN",
+    "dest": "CDG",
+    "price": 51,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "SEN",
+      "dest": "CDG",
+      "depart": "2026-12-30T07:10:00",
+      "arrive": "2026-12-30T09:20:00",
+      "minutes": 70
+     }
+    ],
+    "spec_key": "ow|SEN|CDG|2026-12-30||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "MEX",
+    "price": 645,
+    "airlines": [
+     "Air France"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "MEX",
+      "depart": "2026-12-30T15:50:00",
+      "arrive": "2026-12-30T20:55:00",
+      "minutes": 725
+     }
+    ],
+    "spec_key": "ow|CDG|MEX|2026-12-30||0|"
+   },
+   {
+    "origin": "MEX",
+    "dest": "LHR",
+    "price": 484,
+    "airlines": [
+     "American",
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "MEX",
+      "dest": "JFK",
+      "depart": "2027-01-08T00:45:00",
+      "arrive": "2027-01-08T06:30:00",
+      "minutes": 285
+     },
+     {
+      "origin": "JFK",
+      "dest": "LHR",
+      "depart": "2027-01-08T08:05:00",
+      "arrive": "2027-01-08T20:00:00",
+      "minutes": 415
+     }
+    ],
+    "spec_key": "ow|MEX|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via CDG",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 604,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-08T00:05:00",
+      "arrive": "2027-01-08T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-08T07:05:00",
+      "arrive": "2027-01-08T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via IST",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "IST",
+    "price": 524,
+    "airlines": [
+     "Turkish Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "IST",
+      "depart": "2027-01-07T23:45:00",
+      "arrive": "2027-01-08T06:10:00",
+      "minutes": 685
+     }
+    ],
+    "spec_key": "ow|KUL|IST|2027-01-07||0|"
+   },
+   {
+    "origin": "IST",
+    "dest": "LHR",
+    "price": 100,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "IST",
+      "dest": "LHR",
+      "depart": "2027-01-08T14:55:00",
+      "arrive": "2027-01-08T16:10:00",
+      "minutes": 255
+     }
+    ],
+    "spec_key": "ow|IST|LHR|2027-01-08||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 651,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-09T00:05:00",
+      "arrive": "2027-01-09T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-09T07:05:00",
+      "arrive": "2027-01-09T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via DXB",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "DXB",
+    "price": 276,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "DXB",
+      "depart": "2027-01-07T00:30:00",
+      "arrive": "2027-01-07T04:10:00",
+      "minutes": 460
+     }
+    ],
+    "spec_key": "ow|SIN|DXB|2027-01-07||0|"
+   },
+   {
+    "origin": "DXB",
+    "dest": "LHR",
+    "price": 405,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "DXB",
+      "dest": "LHR",
+      "depart": "2027-01-07T10:00:00",
+      "arrive": "2027-01-07T14:55:00",
+      "minutes": 535
+     }
+    ],
+    "spec_key": "ow|DXB|LHR|2027-01-07||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via DXB",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "DXB",
+    "price": 276,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "DXB",
+      "depart": "2027-01-08T00:30:00",
+      "arrive": "2027-01-08T04:10:00",
+      "minutes": 460
+     }
+    ],
+    "spec_key": "ow|SIN|DXB|2027-01-08||0|"
+   },
+   {
+    "origin": "DXB",
+    "dest": "LHR",
+    "price": 405,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "DXB",
+      "dest": "LHR",
+      "depart": "2027-01-08T10:00:00",
+      "arrive": "2027-01-08T14:55:00",
+      "minutes": 535
+     }
+    ],
+    "spec_key": "ow|DXB|LHR|2027-01-08||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "LHR",
+    "price": 702,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "LHR",
+      "depart": "2027-01-07T09:15:00",
+      "arrive": "2027-01-07T15:25:00",
+      "minutes": 850
+     }
+    ],
+    "spec_key": "ow|KUL|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via DXB",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "DXB",
+    "price": 276,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "DXB",
+      "depart": "2027-01-09T00:30:00",
+      "arrive": "2027-01-09T04:10:00",
+      "minutes": 460
+     }
+    ],
+    "spec_key": "ow|SIN|DXB|2027-01-09||0|"
+   },
+   {
+    "origin": "DXB",
+    "dest": "LHR",
+    "price": 414,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "DXB",
+      "dest": "LHR",
+      "depart": "2027-01-09T10:00:00",
+      "arrive": "2027-01-09T14:55:00",
+      "minutes": 535
+     }
+    ],
+    "spec_key": "ow|DXB|LHR|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "LHR",
+    "price": 717,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "LHR",
+      "depart": "2027-01-09T23:15:00",
+      "arrive": "2027-01-10T05:20:00",
+      "minutes": 845
+     }
+    ],
+    "spec_key": "ow|KUL|LHR|2027-01-09||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via CDG",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 558,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "DXB",
+      "depart": "2026-12-31T15:50:00",
+      "arrive": "2027-01-01T02:40:00",
+      "minutes": 410
+     },
+     {
+      "origin": "DXB",
+      "dest": "KUL",
+      "depart": "2027-01-01T03:40:00",
+      "arrive": "2027-01-01T14:45:00",
+      "minutes": 425
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-31||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via CDG",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-27",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 596,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-27T08:25:00",
+      "arrive": "2026-12-27T19:35:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "KUL",
+      "depart": "2026-12-27T21:05:00",
+      "arrive": "2026-12-28T07:55:00",
+      "minutes": 410
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-27||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "KUL",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 558,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "DXB",
+      "depart": "2026-12-31T15:50:00",
+      "arrive": "2027-01-01T02:40:00",
+      "minutes": 410
+     },
+     {
+      "origin": "DXB",
+      "dest": "KUL",
+      "depart": "2027-01-01T03:40:00",
+      "arrive": "2027-01-01T14:45:00",
+      "minutes": 425
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-31||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via CDG",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 613,
+    "airlines": [
+     "Etihad"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "AUH",
+      "depart": "2026-12-29T08:40:00",
+      "arrive": "2026-12-29T19:40:00",
+      "minutes": 420
+     },
+     {
+      "origin": "AUH",
+      "dest": "KUL",
+      "depart": "2026-12-29T20:35:00",
+      "arrive": "2026-12-30T08:10:00",
+      "minutes": 455
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-29||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via CDG",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 613,
+    "airlines": [
+     "Etihad"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "AUH",
+      "depart": "2026-12-30T08:40:00",
+      "arrive": "2026-12-30T19:40:00",
+      "minutes": 420
+     },
+     {
+      "origin": "AUH",
+      "dest": "KUL",
+      "depart": "2026-12-30T20:50:00",
+      "arrive": "2026-12-31T08:05:00",
+      "minutes": 435
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out via MCT, back via CDG",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MCT",
+    "price": 327,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-29T20:05:00",
+      "arrive": "2026-12-30T07:15:00",
+      "minutes": 430
+     }
+    ],
+    "spec_key": "ow|LHR|MCT|2026-12-29||0|"
+   },
+   {
+    "origin": "MCT",
+    "dest": "SIN",
+    "price": 207,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|MCT|SIN|2026-12-31||0|"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 1,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "LHR",
+    "price": 804,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "LHR",
+      "depart": "2027-01-08T09:15:00",
+      "arrive": "2027-01-08T15:25:00",
+      "minutes": 850
+     }
+    ],
+    "spec_key": "ow|KUL|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "KUL",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-27",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 596,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-27T08:25:00",
+      "arrive": "2026-12-27T19:35:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "KUL",
+      "depart": "2026-12-27T21:05:00",
+      "arrive": "2026-12-28T07:55:00",
+      "minutes": 410
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-27||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via DXB",
+  "fly_in": "SIN",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-09",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "SIN",
+    "price": 325,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-30T20:05:00",
+      "arrive": "2026-12-31T07:15:00",
+      "minutes": 430
+     },
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|LHR|SIN|2026-12-30||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "DXB",
+    "price": 296,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "DXB",
+      "depart": "2027-01-09T18:25:00",
+      "arrive": "2027-01-09T21:45:00",
+      "minutes": 440
+     }
+    ],
+    "spec_key": "ow|KUL|DXB|2027-01-09||0|"
+   },
+   {
+    "origin": "DXB",
+    "dest": "LHR",
+    "price": 440,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "DXB",
+      "dest": "LHR",
+      "depart": "2027-01-10T10:00:00",
+      "arrive": "2027-01-10T14:55:00",
+      "minutes": 535
+     }
+    ],
+    "spec_key": "ow|DXB|LHR|2027-01-10||0|"
+   }
+  ],
+  "nights_in_hubs": 1,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out via MCT, back via CDG",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-28",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MCT",
+    "price": 327,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-28T20:05:00",
+      "arrive": "2026-12-29T07:15:00",
+      "minutes": 430
+     }
+    ],
+    "spec_key": "ow|LHR|MCT|2026-12-28||0|"
+   },
+   {
+    "origin": "MCT",
+    "dest": "KUL",
+    "price": 322,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "MCT",
+      "dest": "KUL",
+      "depart": "2026-12-29T21:05:00",
+      "arrive": "2026-12-30T07:55:00",
+      "minutes": 410
+     }
+    ],
+    "spec_key": "ow|MCT|KUL|2026-12-29||0|"
+   },
+   {
+    "origin": "KUL",
+    "dest": "CDG",
+    "price": 473,
+    "airlines": [
+     "Malaysia Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "CDG",
+      "depart": "2027-01-08T23:45:00",
+      "arrive": "2027-01-09T06:40:00",
+      "minutes": 835
+     }
+    ],
+    "spec_key": "ow|KUL|CDG|2027-01-08||0|"
+   },
+   {
+    "origin": "CDG",
+    "dest": "LTN",
+    "price": 40,
+    "airlines": [
+     "easyJet"
+    ],
+    "segments": [
+     {
+      "origin": "CDG",
+      "dest": "LTN",
+      "depart": "2027-01-09T10:30:00",
+      "arrive": "2027-01-09T10:50:00",
+      "minutes": 80
+     }
+    ],
+    "spec_key": "ow|CDG|LTN|2027-01-09||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "KUL",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 613,
+    "airlines": [
+     "Etihad"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "AUH",
+      "depart": "2026-12-29T08:40:00",
+      "arrive": "2026-12-29T19:40:00",
+      "minutes": 420
+     },
+     {
+      "origin": "AUH",
+      "dest": "KUL",
+      "depart": "2026-12-29T20:35:00",
+      "arrive": "2026-12-30T08:10:00",
+      "minutes": 455
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-29||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "KUL",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-30",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 613,
+    "airlines": [
+     "Etihad"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "AUH",
+      "depart": "2026-12-30T08:40:00",
+      "arrive": "2026-12-30T19:40:00",
+      "minutes": 420
+     },
+     {
+      "origin": "AUH",
+      "dest": "KUL",
+      "depart": "2026-12-30T20:50:00",
+      "arrive": "2026-12-31T08:05:00",
+      "minutes": 435
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-30||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out via MCT, back direct",
+  "fly_in": "SIN",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-29",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "MCT",
+    "price": 327,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "MCT",
+      "depart": "2026-12-29T20:05:00",
+      "arrive": "2026-12-30T07:15:00",
+      "minutes": 430
+     }
+    ],
+    "spec_key": "ow|LHR|MCT|2026-12-29||0|"
+   },
+   {
+    "origin": "MCT",
+    "dest": "SIN",
+    "price": 207,
+    "airlines": [
+     "Oman Air"
+    ],
+    "segments": [
+     {
+      "origin": "MCT",
+      "dest": "SIN",
+      "depart": "2026-12-31T08:15:00",
+      "arrive": "2026-12-31T19:40:00",
+      "minutes": 445
+     }
+    ],
+    "spec_key": "ow|MCT|SIN|2026-12-31||0|"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 534,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-07T00:05:00",
+      "arrive": "2027-01-07T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-07T07:05:00",
+      "arrive": "2027-01-07T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-07||1|960"
+   }
+  ],
+  "nights_in_hubs": 1,
+  "ground": [
+   [
+    "bus/train/ferry SIN\u2192KUL (est.)",
+    20
+   ],
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Direct one-ways",
+  "fly_in": "KUL",
+  "fly_out": "SIN",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-08",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 558,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "DXB",
+      "depart": "2026-12-31T15:50:00",
+      "arrive": "2027-01-01T02:40:00",
+      "minutes": 410
+     },
+     {
+      "origin": "DXB",
+      "dest": "KUL",
+      "depart": "2027-01-01T03:40:00",
+      "arrive": "2027-01-01T14:45:00",
+      "minutes": 425
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-31||1|960"
+   },
+   {
+    "origin": "SIN",
+    "dest": "LHR",
+    "price": 604,
+    "airlines": [
+     "SWISS"
+    ],
+    "segments": [
+     {
+      "origin": "SIN",
+      "dest": "ZRH",
+      "depart": "2027-01-08T00:05:00",
+      "arrive": "2027-01-08T06:15:00",
+      "minutes": 790
+     },
+     {
+      "origin": "ZRH",
+      "dest": "LHR",
+      "depart": "2027-01-08T07:05:00",
+      "arrive": "2027-01-08T08:05:00",
+      "minutes": 120
+     }
+    ],
+    "spec_key": "ow|SIN|LHR|2027-01-08||1|960"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [
+   [
+    "bus/train/ferry KUL\u2192SIN (est.)",
+    20
+   ]
+  ],
+  "notes": []
+ },
+ {
+  "trip": "Malaysia",
+  "strategy": "Out direct, back via IST",
+  "fly_in": "KUL",
+  "fly_out": "KUL",
+  "leave_london": "2026-12-31",
+  "leave_country": "2027-01-07",
+  "tickets": [
+   {
+    "origin": "LHR",
+    "dest": "KUL",
+    "price": 558,
+    "airlines": [
+     "Emirates"
+    ],
+    "segments": [
+     {
+      "origin": "LHR",
+      "dest": "DXB",
+      "depart": "2026-12-31T15:50:00",
+      "arrive": "2027-01-01T02:40:00",
+      "minutes": 410
+     },
+     {
+      "origin": "DXB",
+      "dest": "KUL",
+      "depart": "2027-01-01T03:40:00",
+      "arrive": "2027-01-01T14:45:00",
+      "minutes": 425
+     }
+    ],
+    "spec_key": "ow|LHR|KUL|2026-12-31||1|960"
+   },
+   {
+    "origin": "KUL",
+    "dest": "IST",
+    "price": 524,
+    "airlines": [
+     "Turkish Airlines"
+    ],
+    "segments": [
+     {
+      "origin": "KUL",
+      "dest": "IST",
+      "depart": "2027-01-07T23:45:00",
+      "arrive": "2027-01-08T06:10:00",
+      "minutes": 685
+     }
+    ],
+    "spec_key": "ow|KUL|IST|2027-01-07||0|"
+   },
+   {
+    "origin": "IST",
+    "dest": "LHR",
+    "price": 100,
+    "airlines": [
+     "British Airways"
+    ],
+    "segments": [
+     {
+      "origin": "IST",
+      "dest": "LHR",
+      "depart": "2027-01-08T14:55:00",
+      "arrive": "2027-01-08T16:10:00",
+      "minutes": 255
+     }
+    ],
+    "spec_key": "ow|IST|LHR|2027-01-08||0|"
+   }
+  ],
+  "nights_in_hubs": 0,
+  "ground": [],
+  "notes": []
+ }
+]
