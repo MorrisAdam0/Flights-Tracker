@@ -49,3 +49,24 @@ checked_on,trip,id,strategy,route,total
 2026-10-26,Malaysia,5a7bd120c5,"Out via MCT, back direct",LHR→MCT + MCT→SIN + SIN→LHR,1178
 2026-10-26,Malaysia,06479caa50,Direct one-ways,LHR→KUL + SIN→LHR,1182
 2026-10-26,Malaysia,4bc082f401,"Out direct, back via IST",LHR→KUL + KUL→IST + IST→LHR,1182
+2026-10-27,Mexico,371a22b77e,London return,LHR→MEX⇄,1062
+2026-10-27,Mexico,cf5ba0eca7,Direct one-ways,LHR→MEX + MEX→LHR,1100
+2026-10-27,Mexico,f11fc215d1,Direct one-ways,LHR→MEX + MEX→LHR,1100
+2026-10-27,Mexico,23c5384c4c,Direct one-ways,LHR→MEX + MEX→LHR,1100
+2026-10-27,Mexico,371a22b77e,London return,LHR→MEX⇄,1118
+2026-10-27,Mexico,444d85f3d9,London return,LHR→CUN⇄,1118
+2026-10-27,Mexico,4a526cc4fe,London return,LHR→MEX⇄,1128
+2026-10-27,Mexico,4a526cc4fe,London return,LHR→MEX⇄,1158
+2026-10-27,Mexico,f035c2e4ae,Direct one-ways,LHR→MEX + CUN→LHR,1162
+2026-10-27,Mexico,a90a93e595,London return,LHR→MEX⇄,1168
+2026-10-27,Mexico,d5527f3242,"Out via CDG, back direct",SEN→CDG + CDG→MEX + MEX→LHR,1180
+2026-10-27,Mexico,550f60b877,"Out via CDG, back direct",SEN→CDG + CDG→MEX + MEX→LHR,1180
+2026-10-27,Mexico,ee914bf682,London return,LHR→CUN⇄,1193
+2026-10-27,Mexico,a90a93e595,London return,LHR→MEX⇄,1193
+2026-10-27,Mexico,9862727bb0,"Out via CDG, back direct",LGW→CDG + CDG→MEX + MEX→LHR,1242
+2026-10-27,Mexico,4ab78b4704,"Out via CDG, back direct",LGW→CDG + CDG→MEX + MEX→LHR,1242
+2026-10-27,Mexico,d2f2b0b1dc,"Out via CDG, back direct",LGW→CDG + CDG→MEX + MEX→LHR,1242
+2026-10-27,Malaysia,1b554bcabc,Direct one-ways,LHR→KUL + SIN→LHR,1167
+2026-10-27,Malaysia,b273da7071,Direct one-ways,LHR→KUL + SIN→LHR,1167
+2026-10-27,Malaysia,5a7bd120c5,"Out via MCT, back direct",LHR→MCT + MCT→SIN + SIN→LHR,1179
+2026-10-27,Malaysia,f158ab65d1,Direct one-ways,LHR→KUL + SIN→LHR,1426
