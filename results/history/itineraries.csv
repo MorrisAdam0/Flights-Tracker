@@ -105,3 +105,53 @@ checked_on,trip,id,strategy,route,total
 2026-10-28,Malaysia,5a7bd120c5,"Out via MCT, back direct",LHR→MCT + MCT→SIN + SIN→LHR,1219
 2026-10-28,Malaysia,7b085dc924,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1356
 2026-10-28,Malaysia,f158ab65d1,Direct one-ways,LHR→KUL + SIN→LHR,1466
+2026-10-29,Mexico,a5185457a2,London return,LHR→CUN⇄,1026
+2026-10-29,Mexico,444d85f3d9,London return,LHR→CUN⇄,1032
+2026-10-29,Mexico,371a22b77e,London return,LHR→MEX⇄,1062
+2026-10-29,Mexico,cd727b586a,London return,LHR→MEX⇄,1078
+2026-10-29,Mexico,371a22b77e,London return,LHR→MEX⇄,1092
+2026-10-29,Mexico,09cd5749f6,BCN return + hops,STN→BCN + BCN→MEX⇄ + BCN→LTN,1100
+2026-10-29,Mexico,a5185457a2,London return,LHR→CUN⇄,1112
+2026-10-29,Mexico,444d85f3d9,London return,LHR→CUN⇄,1118
+2026-10-29,Mexico,b945995b14,BCN return + hops,STN→BCN + BCN→MEX⇄ + BCN→LGW,1124
+2026-10-29,Mexico,4a526cc4fe,London return,LHR→MEX⇄,1128
+2026-10-29,Mexico,886605362c,London return,LHR→MEX⇄,1128
+2026-10-29,Mexico,38241eb9e5,London return,LHR→MEX⇄,1131
+2026-10-29,Mexico,f11fc215d1,Direct one-ways,LHR→MEX + MEX→LHR,1133
+2026-10-29,Mexico,23c5384c4c,Direct one-ways,LHR→MEX + MEX→LHR,1133
+2026-10-29,Mexico,1a4cf1f24c,BCN return + hops,STN→BCN + BCN→MEX⇄ + BCN→LHR,1135
+2026-10-29,Mexico,a90a93e595,London return,LHR→MEX⇄,1138
+2026-10-29,Mexico,505949ed94,BCN return + hops,LTN→BCN + BCN→MEX⇄ + BCN→LTN,1148
+2026-10-29,Mexico,ac70372338,BCN return + hops,LGW→BCN + BCN→MEX⇄ + BCN→LTN,1153
+2026-10-29,Mexico,4a526cc4fe,London return,LHR→MEX⇄,1158
+2026-10-29,Mexico,61cebea1b4,BCN return + hops,LTN→BCN + BCN→MEX⇄ + BCN→LTN,1160
+2026-10-29,Mexico,a90a93e595,London return,LHR→MEX⇄,1168
+2026-10-29,Mexico,2bd0d2bb6f,London return,LHR→MEX⇄,1169
+2026-10-29,Mexico,1db6e06def,BCN return + hops,LTN→BCN + BCN→MEX⇄ + BCN→LGW,1172
+2026-10-29,Mexico,18eb4816e1,BCN return + hops,LGW→BCN + BCN→MEX⇄ + BCN→LGW,1177
+2026-10-29,Mexico,64894c3924,"Out direct, back via BCN",LHR→MEX + MEX→BCN + BCN→LTN,1180
+2026-10-29,Malaysia,d5f0fe8d1c,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,779
+2026-10-29,Malaysia,9c8ce302ac,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,824
+2026-10-29,Malaysia,243309b92e,Direct one-ways,LHR→SIN + SIN→LHR,912
+2026-10-29,Malaysia,35ddf08671,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,942
+2026-10-29,Malaysia,38b672d56e,"Out direct, back via IST",LHR→SIN + SIN→IST + IST→LHR,976
+2026-10-29,Malaysia,74b10e11fa,Direct one-ways,LHR→SIN + SIN→LHR,981
+2026-10-29,Malaysia,457080fff5,Direct one-ways,LHR→SIN + SIN→LHR,981
+2026-10-29,Malaysia,135d8ff4ef,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,987
+2026-10-29,Malaysia,ccaada414e,Direct one-ways,LHR→SIN + KUL→LHR,988
+2026-10-29,Malaysia,f609503764,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,992
+2026-10-29,Malaysia,b3e4320b36,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,1020
+2026-10-29,Malaysia,9f43096049,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1037
+2026-10-29,Malaysia,d0e9a70eb9,"Out direct, back via CDG",LHR→SIN + SIN→CDG + CDG→LTN,1047
+2026-10-29,Malaysia,3de731d5c9,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1049
+2026-10-29,Malaysia,9008b405b6,"Out via MCT, back via CDG",LHR→MCT + MCT→SIN + KUL→CDG + CDG→LTN,1059
+2026-10-29,Malaysia,4aec8878c5,London return,LHR→SIN⇄,1062
+2026-10-29,Malaysia,0f2cc9e36c,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,1065
+2026-10-29,Malaysia,967b3825dd,Direct one-ways,LHR→KUL + SIN→LHR,1075
+2026-10-29,Malaysia,7547c82f51,Direct one-ways,LHR→SIN + KUL→LHR,1082
+2026-10-29,Malaysia,09a413313c,Direct one-ways,LHR→SIN + KUL→LHR,1082
+2026-10-29,Malaysia,7381de427e,"Out via MCT, back via CDG",LHR→MCT + MCT→KUL + KUL→CDG + CDG→LTN,1084
+2026-10-29,Malaysia,2190ba5aa2,"Out direct, back via CDG",LGW→KUL + KUL→CDG + CDG→LTN,1096
+2026-10-29,Malaysia,4b775b4e8a,"Out via MCT, back via CDG",LHR→MCT + MCT→SIN + KUL→CDG + CDG→LTN,1104
+2026-10-29,Malaysia,4aec8878c5,London return,LHR→SIN⇄,1105
+2026-10-29,Malaysia,df63c9d954,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1111
