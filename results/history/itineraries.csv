@@ -241,3 +241,53 @@ checked_on,trip,id,strategy,route,total
 2026-11-01,Malaysia,7547c82f51,Direct one-ways,LHR→SIN + KUL→LHR,1085
 2026-11-01,Malaysia,38b672d56e,"Out direct, back via IST",LHR→SIN + SIN→IST + IST→LHR,1134
 2026-11-01,Malaysia,09a413313c,Direct one-ways,LHR→SIN + KUL→LHR,1181
+2026-11-02,Mexico,98cd4da853,London return,LGW→CUN⇄,1046
+2026-11-02,Mexico,98cd4da853,London return,LGW→CUN⇄,1046
+2026-11-02,Mexico,a5185457a2,London return,LHR→CUN⇄,1048
+2026-11-02,Mexico,9b22fc6725,London return,LHR→MEX⇄,1049
+2026-11-02,Mexico,a5185457a2,London return,LHR→CUN⇄,1063
+2026-11-02,Mexico,4d565d6be3,London return,LHR→CUN⇄,1081
+2026-11-02,Mexico,4d565d6be3,London return,LHR→CUN⇄,1081
+2026-11-02,Mexico,1e36cc065e,London return,LHR→MEX⇄,1083
+2026-11-02,Mexico,3a2cbb7698,London return,LHR→CUN⇄,1088
+2026-11-02,Mexico,3a2cbb7698,London return,LHR→CUN⇄,1088
+2026-11-02,Mexico,757cf77a7f,London return,LHR→CUN⇄,1088
+2026-11-02,Mexico,757cf77a7f,London return,LHR→CUN⇄,1088
+2026-11-02,Mexico,a90a93e595,London return,LHR→MEX⇄,1091
+2026-11-02,Mexico,4ae3450db9,London return,LGW→CUN⇄,1110
+2026-11-02,Mexico,cb41063b88,Direct one-ways,LHR→MEX + MEX→LHR,1136
+2026-11-02,Mexico,9d58407544,Direct one-ways,LHR→MEX + MEX→LHR,1136
+2026-11-02,Mexico,1cfd20ec4b,Direct one-ways,LHR→MEX + MEX→LHR,1136
+2026-11-02,Mexico,ab9152703a,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→LTN,1137
+2026-11-02,Mexico,1e36cc065e,London return,LHR→MEX⇄,1139
+2026-11-02,Mexico,1019f130fb,London return,LHR→CUN⇄,1143
+2026-11-02,Mexico,94a9221053,BCN return + hops,LTN→BCN + BCN→MEX⇄ + BCN→LTN,1147
+2026-11-02,Mexico,6eef195c08,Direct one-ways,LGW→CUN + MEX→LHR,1148
+2026-11-02,Mexico,d9be7ef151,Direct one-ways,LGW→CUN + MEX→LHR,1148
+2026-11-02,Mexico,d1e645ad9e,Direct one-ways,LGW→CUN + MEX→LHR,1148
+2026-11-02,Mexico,ac70372338,BCN return + hops,LGW→BCN + BCN→MEX⇄ + BCN→LTN,1148
+2026-11-02,Malaysia,d5f0fe8d1c,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,826
+2026-11-02,Malaysia,9c8ce302ac,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,881
+2026-11-02,Malaysia,243309b92e,Direct one-ways,LHR→SIN + SIN→LHR,916
+2026-11-02,Malaysia,846363b82f,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,928
+2026-11-02,Malaysia,35ddf08671,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,957
+2026-11-02,Malaysia,74b10e11fa,Direct one-ways,LHR→SIN + SIN→LHR,985
+2026-11-02,Malaysia,135d8ff4ef,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1012
+2026-11-02,Malaysia,967b3825dd,Direct one-ways,LHR→KUL + SIN→LHR,1047
+2026-11-02,Malaysia,b689c408dd,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1050
+2026-11-02,Malaysia,bfb285bc1a,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1050
+2026-11-02,Malaysia,524bdd3a24,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1059
+2026-11-02,Malaysia,457080fff5,Direct one-ways,LHR→SIN + SIN→LHR,1069
+2026-11-02,Malaysia,ab859837dd,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1070
+2026-11-02,Malaysia,d8a1e0d8d3,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,1079
+2026-11-02,Malaysia,7547c82f51,Direct one-ways,LHR→SIN + KUL→LHR,1081
+2026-11-02,Malaysia,3de731d5c9,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1085
+2026-11-02,Malaysia,e169716774,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1088
+2026-11-02,Malaysia,9008b405b6,"Out via MCT, back via CDG",LHR→MCT + MCT→SIN + KUL→CDG + CDG→LTN,1109
+2026-11-02,Malaysia,23cf25c0f0,Direct one-ways,LHR→KUL + SIN→LHR,1116
+2026-11-02,Malaysia,7b085dc924,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1125
+2026-11-02,Malaysia,6f662413e2,London return,LHR→SIN⇄,1131
+2026-11-02,Malaysia,a8a2d51cf7,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,1134
+2026-11-02,Malaysia,8059acd2ab,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1143
+2026-11-02,Malaysia,c4472806d2,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1151
+2026-11-02,Malaysia,36ad79d678,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1151
