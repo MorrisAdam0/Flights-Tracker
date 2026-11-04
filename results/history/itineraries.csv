@@ -312,3 +312,33 @@ checked_on,trip,id,strategy,route,total
 2026-11-03,Malaysia,3de731d5c9,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1091
 2026-11-03,Malaysia,6f662413e2,London return,LHR→SIN⇄,1110
 2026-11-03,Malaysia,23cf25c0f0,Direct one-ways,LHR→KUL + SIN→LHR,1112
+2026-11-04,Mexico,a5185457a2,London return,LHR→CUN⇄,1047
+2026-11-04,Mexico,9b22fc6725,London return,LHR→MEX⇄,1049
+2026-11-04,Mexico,a5185457a2,London return,LHR→CUN⇄,1052
+2026-11-04,Mexico,4ae3450db9,London return,LGW→CUN⇄,1064
+2026-11-04,Mexico,3a2cbb7698,London return,LHR→CUN⇄,1082
+2026-11-04,Mexico,3a2cbb7698,London return,LHR→CUN⇄,1082
+2026-11-04,Mexico,98cd4da853,London return,LGW→CUN⇄,1100
+2026-11-04,Mexico,4d565d6be3,London return,LHR→CUN⇄,1127
+2026-11-04,Mexico,4d565d6be3,London return,LHR→CUN⇄,1127
+2026-11-04,Mexico,cb41063b88,Direct one-ways,LHR→MEX + MEX→LHR,1133
+2026-11-04,Mexico,9d58407544,Direct one-ways,LHR→MEX + MEX→LHR,1133
+2026-11-04,Mexico,1cfd20ec4b,Direct one-ways,LHR→MEX + MEX→LHR,1133
+2026-11-04,Mexico,1e36cc065e,London return,LHR→MEX⇄,1139
+2026-11-04,Mexico,f50c7ddda3,London return,LHR→CUN⇄,1142
+2026-11-04,Mexico,6eef195c08,Direct one-ways,LGW→CUN + MEX→LHR,1143
+2026-11-04,Mexico,d9be7ef151,Direct one-ways,LGW→CUN + MEX→LHR,1143
+2026-11-04,Mexico,d1e645ad9e,Direct one-ways,LGW→CUN + MEX→LHR,1143
+2026-11-04,Mexico,757cf77a7f,London return,LHR→CUN⇄,1173
+2026-11-04,Mexico,a90a93e595,London return,LHR→MEX⇄,1184
+2026-11-04,Malaysia,135d8ff4ef,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1016
+2026-11-04,Malaysia,23cf25c0f0,Direct one-ways,LHR→KUL + SIN→LHR,1109
+2026-11-04,Malaysia,7b085dc924,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1130
+2026-11-04,Malaysia,8059acd2ab,"Out direct, back via CDG",LHR→KUL + KUL→CDG + CDG→LTN,1210
+2026-11-04,Malaysia,9c8ce302ac,"Out direct, back via CDG",LHR→SIN + KUL→CDG + CDG→LTN,1227
+2026-11-04,Malaysia,6f662413e2,London return,LHR→SIN⇄,1298
+2026-11-04,Malaysia,74b10e11fa,Direct one-ways,LHR→SIN + SIN→LHR,1320
+2026-11-04,Malaysia,bfb285bc1a,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1389
+2026-11-04,Malaysia,457080fff5,Direct one-ways,LHR→SIN + SIN→LHR,1408
+2026-11-04,Malaysia,7547c82f51,Direct one-ways,LHR→SIN + KUL→LHR,1421
+2026-11-04,Malaysia,3de731d5c9,"Out direct, back via DXB",LHR→SIN + SIN→DXB + DXB→LHR,1423
