@@ -392,3 +392,29 @@ checked_on,trip,id,strategy,route,total
 2026-11-05,Malaysia,9e0c12c15e,Direct one-ways,LGW→SIN + KUL→LHR,1258
 2026-11-05,Malaysia,1ae029ffed,"Out direct, back via AMS",LHR→KUL + SIN→AMS + AMS→LTN,1263
 2026-11-05,Malaysia,6fa407582b,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1269
+2026-11-06,Mexico,1e36cc065e,London return,LHR→MEX⇄,1010
+2026-11-06,Mexico,1e36cc065e,London return,LHR→MEX⇄,1037
+2026-11-06,Mexico,38241eb9e5,London return,LHR→MEX⇄,1059
+2026-11-06,Mexico,a5185457a2,London return,LHR→CUN⇄,1084
+2026-11-06,Mexico,6eef195c08,Direct one-ways,LGW→CUN + MEX→LHR,1089
+2026-11-06,Mexico,d1e645ad9e,Direct one-ways,LGW→CUN + MEX→LHR,1089
+2026-11-06,Mexico,0e162ab1a9,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→LGW,1143
+2026-11-06,Mexico,ee914bf682,London return,LHR→CUN⇄,1147
+2026-11-06,Mexico,8bf13236b5,London return,LHR→CUN⇄,1149
+2026-11-06,Mexico,882a7391be,London return,LHR→MEX⇄,1163
+2026-11-06,Mexico,32369fe919,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→SEN,1166
+2026-11-06,Mexico,f40a86c99c,"Out via MAD, back direct",LTN→MAD + MAD→MEX + MEX→LHR,1186
+2026-11-06,Mexico,c819d17647,London return,LHR→MEX⇄,1214
+2026-11-06,Malaysia,7de59b3282,London return,LHR→SIN⇄,1185
+2026-11-06,Malaysia,f158ab65d1,Direct one-ways,LHR→KUL + SIN→LHR,1218
+2026-11-06,Malaysia,23cf25c0f0,Direct one-ways,LHR→KUL + SIN→LHR,1234
+2026-11-06,Malaysia,9d62d244e8,Direct one-ways,LHR→KUL + SIN→LHR,1259
+2026-11-06,Malaysia,dafe6e9539,Direct one-ways,LHR→KUL + KUL→LHR,1262
+2026-11-06,Malaysia,a901eac23f,London return,LHR→SIN⇄,1267
+2026-11-06,Malaysia,af56325205,Direct one-ways,LHR→KUL + KUL→LHR,1287
+2026-11-06,Malaysia,39abe2194c,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1328
+2026-11-06,Malaysia,c1b6068d75,"Out direct, back via DXB",LHR→KUL + SIN→DXB + DXB→LHR,1333
+2026-11-06,Malaysia,00e0b8ffb5,"Out direct, back via DOH",LHR→KUL + KUL→DOH + DOH→LHR,1350
+2026-11-06,Malaysia,6fa407582b,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1353
+2026-11-06,Malaysia,1ae029ffed,"Out direct, back via AMS",LHR→KUL + SIN→AMS + AMS→LTN,1396
+2026-11-06,Malaysia,ce23b36cde,Direct one-ways,LHR→KUL + SIN→LHR,1460
