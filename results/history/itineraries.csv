@@ -418,3 +418,32 @@ checked_on,trip,id,strategy,route,total
 2026-11-06,Malaysia,6fa407582b,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1353
 2026-11-06,Malaysia,1ae029ffed,"Out direct, back via AMS",LHR→KUL + SIN→AMS + AMS→LTN,1396
 2026-11-06,Malaysia,ce23b36cde,Direct one-ways,LHR→KUL + SIN→LHR,1460
+2026-11-07,Mexico,1e36cc065e,London return,LHR→MEX⇄,1010
+2026-11-07,Mexico,1e36cc065e,London return,LHR→MEX⇄,1037
+2026-11-07,Mexico,acab5723e3,London return,LHR→MEX⇄,1057
+2026-11-07,Mexico,a5185457a2,London return,LHR→CUN⇄,1094
+2026-11-07,Mexico,ee914bf682,London return,LHR→CUN⇄,1142
+2026-11-07,Mexico,38241eb9e5,London return,LHR→MEX⇄,1142
+2026-11-07,Mexico,0e162ab1a9,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→LGW,1143
+2026-11-07,Mexico,0e6a190eff,BCN return + hops,STN→BCN + BCN→MEX⇄ + BCN→LGW,1146
+2026-11-07,Mexico,98cd4da853,London return,LGW→CUN⇄,1155
+2026-11-07,Mexico,882a7391be,London return,LHR→MEX⇄,1163
+2026-11-07,Mexico,32369fe919,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→SEN,1167
+2026-11-07,Mexico,f3fd917c1e,BCN return + hops,STN→BCN + BCN→MEX⇄ + BCN→SEN,1170
+2026-11-07,Mexico,4c6260dd9c,BCN return + hops,LHR→BCN + BCN→MEX⇄ + BCN→LGW,1188
+2026-11-07,Mexico,c819d17647,London return,LHR→MEX⇄,1196
+2026-11-07,Mexico,c819d17647,London return,LHR→MEX⇄,1196
+2026-11-07,Mexico,8bf13236b5,London return,LHR→CUN⇄,1204
+2026-11-07,Mexico,98cd4da853,London return,LGW→CUN⇄,1210
+2026-11-07,Mexico,0bc69f8430,London return,LHR→GDL⇄,1269
+2026-11-07,Malaysia,504fdc299a,London return,LHR→SIN⇄,1149
+2026-11-07,Malaysia,23cf25c0f0,Direct one-ways,LHR→KUL + SIN→LHR,1247
+2026-11-07,Malaysia,d8b32c7bf9,Direct one-ways,LHR→KUL + KUL→LHR,1277
+2026-11-07,Malaysia,39abe2194c,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1328
+2026-11-07,Malaysia,2ee1584339,London return,LHR→SIN⇄,1333
+2026-11-07,Malaysia,bc770e5aa0,"Out direct, back via DOH",LHR→KUL + KUL→DOH + DOH→LHR,1350
+2026-11-07,Malaysia,1ae029ffed,"Out direct, back via AMS",LHR→KUL + SIN→AMS + AMS→LTN,1396
+2026-11-07,Malaysia,a901eac23f,London return,LHR→SIN⇄,1415
+2026-11-07,Malaysia,9d62d244e8,Direct one-ways,LHR→KUL + SIN→LHR,1419
+2026-11-07,Malaysia,c21f9e3551,Direct one-ways,LHR→KUL + KUL→LHR,1449
+2026-11-07,Malaysia,6fa407582b,"Out direct, back via MCT",LHR→KUL + SIN→MCT + MCT→LHR,1500
